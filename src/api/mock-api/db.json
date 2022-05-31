@@ -23,7 +23,7 @@
     },
     {
       "id": 4,
-      "type": "Fabian1",
+      "type": "simple",
       "title": "example",
       "date": "10/10/2022"
     }
