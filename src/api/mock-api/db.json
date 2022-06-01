@@ -1,5 +1,5 @@
 {
-  "test": [
+  "documents": [
     {
       "id": 1,
       "type": "simple",
@@ -26,6 +26,20 @@
       "type": "simple",
       "title": "example",
       "date": "10/10/2022"
+    }
+  ],
+  "documentTypes": [
+    {
+      "id": 1,
+      "type":"Simple"
+    },
+    {
+      "id": 2,
+      "type":"Custom"
+    },
+    {
+      "id": 3,
+      "type":"Advanced"
     }
   ]
 }
