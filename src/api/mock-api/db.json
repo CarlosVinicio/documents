@@ -26,6 +26,60 @@
       "type": "simple",
       "title": "example",
       "date": "10/10/2022"
+    },
+    {
+      "id": 5,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 6,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 7,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 3,
+      "type": "advanced",
+      "title": "example",
+      "text": "ejemplo",
+      "image": "https://www.signaturit.com/wp-content/uploads/2021/01/producto-firma-5.jpg",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 9,
+      "type": "custom",
+      "title": "example",
+      "text": "ejemplo",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 10,
+      "type": "custom",
+      "title": "example",
+      "text": "ejemplo",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 11,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 12,
+      "type": "advanced",
+      "title": "example",
+      "text": "ejemplo",
+      "image": "https://www.signaturit.com/wp-content/uploads/2021/01/producto-firma-5.jpg",
+      "date": "10/10/2022"
     }
   ],
   "documentTypes": [

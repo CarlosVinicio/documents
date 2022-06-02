@@ -1,9 +1,10 @@
 import React from "react";
+import { LayoutStyled } from "./Layout.styled"
 
 export const LayoutContainer = ({ children }) => {
   return (
-    <div>
+    <LayoutStyled>
       {children}
-    </div>
+    </LayoutStyled>
   );
 };
