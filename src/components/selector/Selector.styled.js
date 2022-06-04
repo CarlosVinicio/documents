@@ -32,7 +32,7 @@ export const SelectorStyled = styled.div`
   //list
   .selector__list {
     position: absolute;
-    z-index:9999 ;
+    //z-index:9999 ;
     width: 222px;
     border: solid 1px;
     border: 1px solid ${palette.border};

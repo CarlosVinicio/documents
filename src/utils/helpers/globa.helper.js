@@ -19,7 +19,7 @@ export const getColorByDocumentType = (documentType) => {
 
 export const getDocumentsUrl = (limit, page, documentType) => {
   let url;
-  const type = documentType.toLowerCase();
+  const type = documentType;
   if(type && type !== documentTypes.All){
     url = `?_page=${page}&&_limit=${limit}&&type=${type}`;
   } else {

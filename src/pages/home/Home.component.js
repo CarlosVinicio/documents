@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
 import {
+  createNewDocument,
+  deleteDocument,
   getAllDocuments,
   getDocumentTypes,
 } from "../../api/services/global.service";
+
 import { Card } from "../../components/card/Card.component";
 import { Pagination } from "../../components/Pagination/Pagination.component";
 import { Selector } from "../../components/selector/Selector.component";
 import { HomeStyled } from "./Home.styled";
 import { documentTypes as docTypes } from "../../utils/constants/global.constant";
+import { Button } from "../../components/Button/Button.component";
+import { Modal } from "../../components/Modal/Modal.component";
+import { FormNewDocument } from "./FormNewDocument.component";
 
 export const Home = () => {
   const [documentTypes, setDocumentTypes] = useState([]);
@@ -16,6 +22,9 @@ export const Home = () => {
   const [totalNumberDocuments, setTotalNumberDocuments] = useState(0);
   const [documentTypeSelected, setDocumtnTypeSelected] = useState(docTypes.All);
   const currentPage = 1;
+
+  //Modal states
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   useEffect(() => {
     const documentTypes = getDocumentTypes();
@@ -53,6 +62,20 @@ export const Home = () => {
     refreshDocuments(currentLimit, currentPage, documentType);
   };
 
+  const onConfirmForm = (form) => {
+    createNewDocument(form).then(() => {
+      refreshDocuments(currentLimit, currentPage, documentTypeSelected);
+      setIsOpenModal(false);
+    });
+  };
+
+  const handleDeleteCard = (id) => {
+    deleteDocument(id)
+      .then(() => {
+        refreshDocuments(currentLimit, currentPage, documentTypeSelected);
+      })
+  };
+
   return (
     <HomeStyled>
       <div className="home__header">
@@ -61,13 +84,26 @@ export const Home = () => {
           valueByDefault={documentTypes[0]?.type}
           onToogleOption={handleFilterByDocumentType}
         />
-        <div>Nuevo</div>
+        <Button title="Nuevo" handleClickButton={() => setIsOpenModal(true)} />
+        <Modal show={isOpenModal}>
+          <FormNewDocument
+            docTypes={documentTypes}
+            onCancel={() => setIsOpenModal(false)}
+            onConfirm={onConfirmForm}
+          />
+        </Modal>
       </div>
 
       <div className="cards-grid">
         {documents &&
           documents.map((document) => {
-            return <Card key={document.id} document={document} />;
+            return (
+              <Card
+                key={document.id}
+                document={document}
+                onDeleteCard={handleDeleteCard}
+              />
+            );
           })}
       </div>
 

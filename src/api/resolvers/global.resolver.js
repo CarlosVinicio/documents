@@ -13,3 +13,13 @@ export const fetchAllDocuments = async (limit, page, documentType = documentType
   const response = await axios.get(`${BASE_URL}/${API.documents}${queryUrl}`);
   return response;  
 }
+
+export const fetchCreateNewDocument = async (body) => {  
+  const response = await axios.post(`${BASE_URL}/${API.documents}`, body);
+  return response.data;  
+}
+
+export const fetchDeleteDocument = async (id) => {  
+  const response = await axios.delete(`${BASE_URL}/${API.documents}/${id}`);
+  return response.data;  
+}

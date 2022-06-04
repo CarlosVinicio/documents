@@ -24,13 +24,14 @@ export const CardStyled = styled.div`
     margin-bottom: 10px;
   }
   .card__footer{
-    cursor: pointer;
     border-top: 1px solid ${palette.border};
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+
   }
   .card__footer div{
     padding-top:5px;
+    cursor: pointer;
    }
 `;

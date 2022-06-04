@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { SelectorStyled } from "./Selector.styled";
 
-export const Selector = ({ options, valueByDefault, onToogleOption }) => {
+export const Selector = ({ options, valueByDefault, onToogleOption, style }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [optionSelected, setOptionSelected] = useState();
 
@@ -17,7 +17,7 @@ export const Selector = ({ options, valueByDefault, onToogleOption }) => {
   };
 
   return (
-    <SelectorStyled>
+    <SelectorStyled style={style}>
       <div className="selector__box">
         <button className="selector__button">
           <span>{optionSelected || valueByDefault}</span>

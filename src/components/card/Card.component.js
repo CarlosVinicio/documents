@@ -3,9 +3,8 @@ import { getColorByDocumentType } from "../../utils/helpers/globa.helper";
 import { Chip } from "../Chip/Chip.component";
 import { CardStyled } from "./Card.style";
 
-export const Card = ({document}) => {
-  console.log(document);
-  const { type, title } = document;
+export const Card = ({document, onDeleteCard}) => {
+  const { type, title, id } = document;
 
   return (
     <CardStyled>
@@ -23,6 +22,7 @@ export const Card = ({document}) => {
         </div>
 
         <div className="card__footer">
+          <div onClick={() => onDeleteCard(id)}>Delete</div>
           <div>view details</div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 export const documentTypes = {
-  All: "all",
-  Simple: "simple",
-  Custom: "custom",
-  Advanced: "advanced"
+  All: "All",
+  Simple: "Simple",
+  Custom: "Custom",
+  Advanced: "Advanced"
 }
