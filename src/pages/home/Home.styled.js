@@ -2,10 +2,16 @@
 import styled from "styled-components";
 
 export const HomeStyled = styled.div` 
-
   display: flex;
   flex-direction: column;
+  .home__header {
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 20px;
+  }
   .cards-grid {
+    max-height: calc(100vh - 200px);
+    overflow: auto;
     display: grid;
     gap: 0.75rem;
     margin-bottom: 5px;

@@ -10,10 +10,11 @@ export const getDocumentTypes = () => {
     });
 };
 
-export const getAllDocuments = () => {
-  return fetchAllDocuments()
+export const getAllDocuments = (limit, page, documentType) => {
+  return fetchAllDocuments(limit, page, documentType)
     .then((response) => {
-      return response;
+      const { data, headers } = response;
+      return {data, totalDocuments : headers["x-total-count"] };
     })
     .catch((error) => {
       throw error;

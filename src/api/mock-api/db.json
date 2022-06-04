@@ -46,7 +46,7 @@
       "date": "10/10/2022"
     },
     {
-      "id": 3,
+      "id": 8,
       "type": "advanced",
       "title": "example",
       "text": "ejemplo",
@@ -80,19 +80,134 @@
       "text": "ejemplo",
       "image": "https://www.signaturit.com/wp-content/uploads/2021/01/producto-firma-5.jpg",
       "date": "10/10/2022"
+    },
+
+    {
+      "id": 13,
+      "type": "custom",
+      "title": "example",
+      "text": "ejemplo",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 14,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 15,
+      "type": "advanced",
+      "title": "example",
+      "text": "ejemplo",
+      "image": "https://www.signaturit.com/wp-content/uploads/2021/01/producto-firma-5.jpg",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 16,
+      "type": "custom",
+      "title": "example",
+      "text": "ejemplo",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 17,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 18,
+      "type": "advanced",
+      "title": "example",
+      "text": "ejemplo",
+      "image": "https://www.signaturit.com/wp-content/uploads/2021/01/producto-firma-5.jpg",
+      "date": "10/10/2022"
+    }, {
+      "id": 19,
+      "type": "custom",
+      "title": "example",
+      "text": "ejemplo",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 20,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 21,
+      "type": "advanced",
+      "title": "example",
+      "text": "ejemplo",
+      "image": "https://www.signaturit.com/wp-content/uploads/2021/01/producto-firma-5.jpg",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 22,
+      "type": "custom",
+      "title": "example",
+      "text": "ejemplo",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 23,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 24,
+      "type": "advanced",
+      "title": "example",
+      "text": "ejemplo",
+      "image": "https://www.signaturit.com/wp-content/uploads/2021/01/producto-firma-5.jpg",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 25,
+      "type": "custom",
+      "title": "example",
+      "text": "ejemplo",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 26,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 27,
+      "type": "advanced",
+      "title": "example",
+      "text": "ejemplo",
+      "image": "https://www.signaturit.com/wp-content/uploads/2021/01/producto-firma-5.jpg",
+      "date": "10/10/2022"
+    },
+    {
+      "id": 28,
+      "type": "simple",
+      "title": "example",
+      "date": "10/10/2022"
     }
   ],
   "documentTypes": [
     {
       "id": 1,
-      "type":"Simple"
+      "type":"All"
     },
     {
       "id": 2,
-      "type":"Custom"
+      "type":"Simple"
     },
     {
       "id": 3,
+      "type":"Custom"
+    },
+    {
+      "id": 4,
       "type":"Advanced"
     }
   ]
