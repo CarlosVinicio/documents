@@ -11,6 +11,10 @@ export const CardStyled = styled.div`
     width: 222px;
     height: 170px;
     padding: 10px;
+
+  }
+  .card__container:hover {
+    transform: scale(1, 1.1);
     box-shadow: 5px 5px 5px lightgrey;
 
   }

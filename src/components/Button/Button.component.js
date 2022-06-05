@@ -1,9 +1,10 @@
 import React from 'react'
+import { ButtonStyled } from './Button.styled'
 
 export const Button = ({title, handleClickButton}) => {
   return (
-    <div>
+    <ButtonStyled>
       <button onClick={handleClickButton}>{title}</button>
-    </div>
+    </ButtonStyled>
   )
 }

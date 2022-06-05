@@ -19,7 +19,7 @@ export const PaginationStyled = styled.div`
     
   }
   .active {
-    background-color: yellow ;
+    background-color: aliceblue ;
   }
 
   .pagination{ 

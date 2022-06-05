@@ -3,7 +3,7 @@ import { getColorByDocumentType } from "../../utils/helpers/globa.helper";
 import { Chip } from "../Chip/Chip.component";
 import { CardStyled } from "./Card.style";
 
-export const Card = ({document, onDeleteCard}) => {
+export const Card = ({ document, onDeleteCard }) => {
   const { type, title, id } = document;
 
   return (
@@ -11,7 +11,7 @@ export const Card = ({document, onDeleteCard}) => {
       <div className="card__container">
         <div className="card__body">
           <div className="card__header">
-            <Chip name={type} color={getColorByDocumentType(type)}/>
+            <Chip name={type} color={getColorByDocumentType(type)} />
           </div>
           <div className="card__content">
             <div>Title:</div>
@@ -22,8 +22,12 @@ export const Card = ({document, onDeleteCard}) => {
         </div>
 
         <div className="card__footer">
-          <div onClick={() => onDeleteCard(id)}>Delete</div>
-          <div>view details</div>
+          <div onClick={() => onDeleteCard(id)}>
+            <ion-icon name="trash-outline"></ion-icon>
+          </div>
+          <div>
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
         </div>
       </div>
     </CardStyled>
