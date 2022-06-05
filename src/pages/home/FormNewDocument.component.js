@@ -28,7 +28,7 @@ export const FormNewDocument = ({ onCancel, onConfirm, docTypes }) => {
     }
   };
 
-  const renderInputText = () => {
+  const renderInputTextArea = () => {
     if (
       formData?.type === documentTypes.Custom ||
       formData?.type === documentTypes.Advanced
@@ -36,7 +36,13 @@ export const FormNewDocument = ({ onCancel, onConfirm, docTypes }) => {
       return (
         <div className="form__input">
           <label htmlFor="title"> Text </label>
-          <input className="form__text" name="text" onChange={onChangeForm} />
+          <textarea
+            className="form__textarea"
+            name="text"
+            rows="4"
+            cols="50"
+            onChange={onChangeForm}
+          />
         </div>
       );
     }
@@ -78,7 +84,7 @@ export const FormNewDocument = ({ onCancel, onConfirm, docTypes }) => {
                 })}
           </select>
         </div>
-        {renderInputText()}
+        {renderInputTextArea()}
         {formData?.type === documentTypes.Advanced && (
           <div className="form__input">
             <label htmlFor="img"> Image </label>

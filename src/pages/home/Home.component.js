@@ -1,19 +1,24 @@
+
+// Vendor 
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   createNewDocument,
   deleteDocument,
   getAllDocuments,
   getDocumentTypes,
 } from "../../api/services/global.service";
-
+// Component
 import { Card } from "../../components/card/Card.component";
 import { Pagination } from "../../components/Pagination/Pagination.component";
 import { Selector } from "../../components/selector/Selector.component";
-import { HomeStyled } from "./Home.styled";
-import { documentTypes as docTypes } from "../../utils/constants/global.constant";
 import { Button } from "../../components/Button/Button.component";
 import { Modal } from "../../components/Modal/Modal.component";
 import { FormNewDocument } from "./FormNewDocument.component";
+// Styled
+import { HomeStyled } from "./Home.styled";
+//constants
+import { documentTypes as docTypes } from "../../utils/constants/global.constant";
 
 export const Home = () => {
   const [documentTypes, setDocumentTypes] = useState([]);
@@ -25,6 +30,8 @@ export const Home = () => {
 
   //Modal states
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const documentTypes = getDocumentTypes();
@@ -75,6 +82,10 @@ export const Home = () => {
     });
   };
 
+  const handleSelectCard = (id) => {
+    navigate(`/details/${id}`);
+  }
+
   return (
     <HomeStyled>
       <Modal show={isOpenModal}>
@@ -100,6 +111,7 @@ export const Home = () => {
                 key={document.id}
                 document={document}
                 onDeleteCard={handleDeleteCard}
+                onSelectCard={handleSelectCard}
               />
             );
           })}

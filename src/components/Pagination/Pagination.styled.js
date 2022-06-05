@@ -27,5 +27,9 @@ export const PaginationStyled = styled.div`
     display: flex;
     justify-content:space-between ;
     align-items: center;
+    margin-top: 20px;
+    @media (max-width: 660px) {
+      flex-direction: column;
+    }
   }
 `;

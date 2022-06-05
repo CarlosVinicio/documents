@@ -1,4 +1,5 @@
-import { Home } from '../../pages/home/Home.component';
+import { Home } from '../../pages/Home/Home.component';
+import { Details } from '../../pages/Details/Details.component';
 
 export const ROUTES = [
   {
@@ -7,4 +8,10 @@ export const ROUTES = [
     element: <Home />,
     name: 'Home'
   },
+  {
+    path: '/details/:id',
+    key: 'details',
+    element: <Details />,
+    name: 'Details'
+  }
 ];

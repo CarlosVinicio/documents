@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const HomeStyled = styled.div` 
   display: flex;
   flex-direction: column;
+  padding: 5px 10px ;
   .home__header {
     display: flex;
     justify-content:space-between;

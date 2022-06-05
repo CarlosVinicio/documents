@@ -3,7 +3,7 @@ import { getColorByDocumentType } from "../../utils/helpers/globa.helper";
 import { Chip } from "../Chip/Chip.component";
 import { CardStyled } from "./Card.style";
 
-export const Card = ({ document, onDeleteCard }) => {
+export const Card = ({ document, onDeleteCard, onSelectCard }) => {
   const { type, title, id } = document;
 
   return (
@@ -25,7 +25,7 @@ export const Card = ({ document, onDeleteCard }) => {
           <div onClick={() => onDeleteCard(id)}>
             <ion-icon name="trash-outline"></ion-icon>
           </div>
-          <div>
+          <div onClick={() => onSelectCard(id)}>
             <ion-icon name="eye-outline"></ion-icon>
           </div>
         </div>

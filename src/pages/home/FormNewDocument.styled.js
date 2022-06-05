@@ -1,16 +1,23 @@
 import styled from "styled-components";
 
+const commonStyles = `
+  border: 1px solid #7B8B8D;
+  box-sizing: border-box;
+  padding:0px 10px ;
+  width: 100%;
+  margin-top: 5px;
+`;
+
 export const FormStyled = styled.div`
   .form__input {
     margin-bottom: 20px;
   }
   .form__text {
-    border: 1px solid #7B8B8D;
     height: 30px;
-    box-sizing: border-box;
-    padding:0px 10px ;
-    width: 100%;
-    margin-top: 5px;
+    ${commonStyles}
+  }
+  .form__textarea {
+    ${commonStyles}
   }
   label {
     font-weight: 500;

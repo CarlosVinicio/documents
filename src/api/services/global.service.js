@@ -1,4 +1,4 @@
-import { fetchAllDocuments, fetchAllDocumentTypes, fetchCreateNewDocument, fetchDeleteDocument } from "../resolvers/global.resolver";
+import { fetchAllDocuments, fetchAllDocumentTypes, fetchCreateNewDocument, fetchDeleteDocument, fetchDocumentDetails } from "../resolvers/global.resolver";
 
 export const getDocumentTypes = () => {
   return fetchAllDocumentTypes()
@@ -33,6 +33,16 @@ export const createNewDocument = (form) => {
 
 export const deleteDocument = (id) => {
   return fetchDeleteDocument(id)
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export const getDocumentDetails = (id) => {
+  return fetchDocumentDetails(id)
     .then((response) => {
       return response;
     })
