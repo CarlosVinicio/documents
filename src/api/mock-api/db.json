@@ -26,13 +26,6 @@
       "id": 7
     },
     {
-      "type": "Advanced",
-      "title": "Otro mas",
-      "text": "dpakdpkaldklakdlkald",
-      "date": "2022-06-15",
-      "id": 8
-    },
-    {
       "type": "Simple",
       "date": "2022-06-23",
       "title": "asdasd",
@@ -57,17 +50,12 @@
       "id": 12
     },
     {
-      "type": "Custom",
-      "title": "Tipo custom",
-      "text": "este es un custom text",
-      "date": "2022-06-12",
-      "id": 13
-    },
-    {
-      "type": "Simple",
+      "type": "Advanced",
+      "title": "pos uno avanzao",
+      "image": "https://live.staticflickr.com/1685/24392790534_79e885df6e_b.jpg",
+      "text": "hola caracola",
       "date": "2022-06-16",
-      "title": "simpleeeeee",
-      "id": 14
+      "id": 13
     }
   ],
   "documentTypes": [

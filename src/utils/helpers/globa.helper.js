@@ -27,3 +27,19 @@ export const getDocumentsUrl = (limit, page, documentType) => {
   }
   return url;
 }
+
+export const getNewFormData = (formData, type, initUrl) => {
+  const data = {...formData};
+  switch (type) {
+    case documentTypes.Simple:
+      delete data?.text;
+      delete data?.image;
+      return data;
+    case documentTypes.Custom:
+      delete data?.image;
+      return data;
+    default:
+      data.image = initUrl;
+      return data;
+  }
+}

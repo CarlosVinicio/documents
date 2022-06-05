@@ -70,14 +70,20 @@ export const Home = () => {
   };
 
   const handleDeleteCard = (id) => {
-    deleteDocument(id)
-      .then(() => {
-        refreshDocuments(currentLimit, currentPage, documentTypeSelected);
-      })
+    deleteDocument(id).then(() => {
+      refreshDocuments(currentLimit, currentPage, documentTypeSelected);
+    });
   };
 
   return (
     <HomeStyled>
+      <Modal show={isOpenModal}>
+        <FormNewDocument
+          docTypes={documentTypes}
+          onCancel={() => setIsOpenModal(false)}
+          onConfirm={onConfirmForm}
+        />
+      </Modal>
       <div className="home__header">
         <Selector
           options={documentTypes}
@@ -85,15 +91,7 @@ export const Home = () => {
           onToogleOption={handleFilterByDocumentType}
         />
         <Button title="Nuevo" handleClickButton={() => setIsOpenModal(true)} />
-        <Modal show={isOpenModal}>
-          <FormNewDocument
-            docTypes={documentTypes}
-            onCancel={() => setIsOpenModal(false)}
-            onConfirm={onConfirmForm}
-          />
-        </Modal>
       </div>
-
       <div className="cards-grid">
         {documents &&
           documents.map((document) => {

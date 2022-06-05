@@ -1,48 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "../../components/Button/Button.component";
-import { Selector } from "../../components/selector/Selector.component";
-import { documentTypes } from "../../utils/constants/global.constant";
+import {
+  documentTypes,
+  imagesUrlMock,
+} from "../../utils/constants/global.constant";
+import { getNewFormData } from "../../utils/helpers/globa.helper";
 import { FormStyled } from "./FormNewDocument.styled";
 
 export const FormNewDocument = ({ onCancel, onConfirm, docTypes }) => {
-  // Crear fecha dinamica new Date
-  // Imagen como enviar?
+  const [formData, setFormData] = useState({ type: docTypes[1].type });
 
-  const [formData, setFormData] = useState({type: docTypes[1].type});
-
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
-
-  const onChangeForm = (e) => {
+  const onChangeForm = async (e) => {
     const { name, value } = e.target;
     const copyData = { ...formData };
-    switch (value) {
-      case "simple":
-        delete copyData?.text;
-        delete copyData?.image;
-        setFormData({
-          ...copyData,
-          [name]: value,
-        });
-        break;
-      case "custom":
-        delete copyData?.image;
-        setFormData({
-          ...copyData,
-          [name]: value,
-        });
-        break;
-      default:
-        setFormData({
-          ...copyData,
-          [name]: value,
-        });
-        break;
+
+    if (name === "type") {
+      const data = getNewFormData(formData, value, imagesUrlMock[0].url);
+      setFormData({
+        ...data,
+        [name]: value,
+      });
+    } else {
+      setFormData({
+        ...copyData,
+        [name]: value,
+      });
     }
   };
 
-  const renderInputSelect = () => {
+  const renderInputText = () => {
     if (
       formData?.type === documentTypes.Custom ||
       formData?.type === documentTypes.Advanced
@@ -58,7 +44,7 @@ export const FormNewDocument = ({ onCancel, onConfirm, docTypes }) => {
 
   const confirmDocument = () => {
     onConfirm(formData);
-  }
+  };
 
   return (
     <FormStyled>
@@ -85,21 +71,32 @@ export const FormNewDocument = ({ onCancel, onConfirm, docTypes }) => {
                 .filter((document) => document.type !== "All")
                 .map((document) => {
                   return (
-                    <option
-                      key={document.id}
-                      value={document.type}
-                    >
+                    <option key={document.id} value={document.type}>
                       {document.type}
                     </option>
                   );
                 })}
           </select>
         </div>
-        {renderInputSelect()}
+        {renderInputText()}
         {formData?.type === documentTypes.Advanced && (
           <div className="form__input">
-            <label htmlFor="title"> Image </label>
-            <input className="form__text" />
+            <label htmlFor="img"> Image </label>
+            <select
+              name="image"
+              id="img"
+              className="form__text"
+              onChange={(e) => onChangeForm(e)}
+            >
+              {imagesUrlMock &&
+                imagesUrlMock.map((image) => {
+                  return (
+                    <option key={image.id} value={image.url}>
+                      {image.name}
+                    </option>
+                  );
+                })}
+            </select>
           </div>
         )}
 
