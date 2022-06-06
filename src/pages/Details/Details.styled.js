@@ -1,8 +1,12 @@
 import styled, { css } from "styled-components";
+import { palette } from "../../utils/constants/colors.constant";
 
 export const DetailsStyled = styled.div`
   background-color: white;
   min-height: calc(100vh - 50px);
+  height: 100%;
+  max-width: 1150px;
+  margin: auto;
   .details_header,
   .details__body {
     padding: 20px;
@@ -53,12 +57,16 @@ export const DetailsStyled = styled.div`
   }
   .details__date {
     margin: 10px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   .details__text {
     margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
   }
   .details__label {
     font-size: 18;
     font-weight: 600;
+    color: ${palette.titles};
   }
 `;

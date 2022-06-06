@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getDocumentDetails } from "../../api/services/global.service";
+// Components
 import { Chip } from "../../components/Chip/Chip.component";
-import { documentTypes } from "../../utils/constants/global.constant";
-import { getColorByDocumentType } from "../../utils/helpers/globa.helper";
+//Styles
 import { DetailsStyled } from "./Details.styled";
+// Services
+import { getDocumentDetails } from "../../api/services/global.service";
+//Constants
+import { documentTypes } from "../../utils/constants/global.constant";
+//Utils
+import { getColorByDocumentType } from "../../utils/helpers/globa.helper";
 
 const styledChip = { width: "100px" };
 
@@ -19,7 +24,7 @@ export const Details = () => {
   }, []);
 
   return (
-    <DetailsStyled type={detail?.type}> 
+    <DetailsStyled type={detail?.type}>
       <div className="details_header">
         <div className="details__title">{detail?.title}</div>
         <div>
@@ -33,7 +38,7 @@ export const Details = () => {
       <div className="details__body">
         {detail?.type === documentTypes.Advanced && (
           <div className="details_type">
-            <img src={detail?.image} />
+            <img src={detail?.image} alt="no-img" />
           </div>
         )}
 
@@ -51,13 +56,6 @@ export const Details = () => {
           )}
         </div>
       </div>
-
-      {/*  
-     
-      <div>
-        
-      </div>
-      <div></div> */}
     </DetailsStyled>
   );
 };

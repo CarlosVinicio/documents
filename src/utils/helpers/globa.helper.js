@@ -1,4 +1,4 @@
-import { palette } from "../constants/colors";
+import { palette } from "../constants/colors.constant";
 import { documentTypes } from "../constants/global.constant";
 
 export const getColorByDocumentType = (documentType) => {

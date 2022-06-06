@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../utils/constants/colors";
+import { palette } from "../../utils/constants/colors.constant";
 
 export const PaginationStyled = styled.div`
   ul {

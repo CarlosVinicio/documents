@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Selector } from "../selector/Selector.component";
+import { Selector } from "../Selector/Selector.component";
 import { PaginationStyled } from "./Pagination.styled";
 
 export const Pagination = (props) => {
@@ -8,8 +8,9 @@ export const Pagination = (props) => {
   const [active, setActive] = useState(1);
   const [pages, setPages] = useState([]);
   const limits = [
-    { id: 1, type: 5 },
-    { id: 2, type: 10 },
+    { id: 1, type: 8 },
+    { id: 2, type: 12 },
+    { id: 3, type: 16 },
   ];
 
   const total = Math.ceil(parseInt(totalRecords) / pageLimit  );
@@ -71,7 +72,7 @@ export const Pagination = (props) => {
             </li>
           ))}
         </ul>
-        <div>Total: {totalRecords}</div>
+        <div>Items ({totalRecords})</div>
       </div>
     </PaginationStyled>
   );

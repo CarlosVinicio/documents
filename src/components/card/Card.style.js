@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { palette } from "../../utils/constants/colors";
+import { palette } from "../../utils/constants/colors.constant";
 
 export const CardStyled = styled.div`
   .card__container {
@@ -10,31 +10,30 @@ export const CardStyled = styled.div`
     margin-top: 20px;
     height: 170px;
     padding: 10px;
-
   }
   .card__container:hover {
-   // transform: scale(1, 1.1);
-    box-shadow: 5px 5px 5px lightgrey;
-
+    box-shadow: 3px 11px 15px dimgrey;
   }
-  .card__body {
-    
-  }
-  .card__header{
+  .card__header {
     margin-bottom: 10px;
   }
   .card__content div {
     margin-bottom: 10px;
   }
-  .card__footer{
+  .card__content--title {
+    color: ${palette.titles};
+  }
+  .card__footer {
     border-top: 1px solid ${palette.border};
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
-  .card__footer div{
-    padding-top:5px;
+  .card__footer div {
+    padding-top: 5px;
     cursor: pointer;
-   }
+  }
+  .card__content--data {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
 `;

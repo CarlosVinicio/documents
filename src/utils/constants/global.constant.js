@@ -1,3 +1,5 @@
+export const initialCurrentLimit = 8;
+
 export const documentTypes = {
   All: "All",
   Simple: "Simple",

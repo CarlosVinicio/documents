@@ -14,10 +14,10 @@ export const Card = ({ document, onDeleteCard, onSelectCard }) => {
             <Chip name={type} color={getColorByDocumentType(type)} />
           </div>
           <div className="card__content">
-            <div>Title:</div>
-            <div>{title}</div>
-            <div>Date:</div>
-            <div>10/10/2022</div>
+            <div className="card__content--title">Title:</div>
+            <div className="card__content--data">{title}</div>
+            <div className="card__content--title">Date:</div>
+            <div className="card__content--data">10/10/2022</div>
           </div>
         </div>
 

@@ -1,5 +1,4 @@
-
-// Vendor 
+// Vendor
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -9,24 +8,27 @@ import {
   getDocumentTypes,
 } from "../../api/services/global.service";
 // Component
-import { Card } from "../../components/card/Card.component";
+import { Card } from "../../components/Card/Card.component";
 import { Pagination } from "../../components/Pagination/Pagination.component";
-import { Selector } from "../../components/selector/Selector.component";
+import { Selector } from "../../components/Selector/Selector.component";
 import { Button } from "../../components/Button/Button.component";
 import { Modal } from "../../components/Modal/Modal.component";
 import { FormNewDocument } from "./FormNewDocument.component";
 // Styled
 import { HomeStyled } from "./Home.styled";
 //constants
-import { documentTypes as docTypes } from "../../utils/constants/global.constant";
+import {
+  documentTypes as docTypes,
+  initialCurrentLimit,
+} from "../../utils/constants/global.constant";
 
 export const Home = () => {
   const [documentTypes, setDocumentTypes] = useState([]);
   const [documents, setDocuments] = useState([]);
-  const [currentLimit, setCurrentLimit] = useState(5);
+  const [currentLimit, setCurrentLimit] = useState(initialCurrentLimit);
   const [totalNumberDocuments, setTotalNumberDocuments] = useState(0);
   const [documentTypeSelected, setDocumtnTypeSelected] = useState(docTypes.All);
-  const currentPage = 1;
+  const initialPage = 1;
 
   //Modal states
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -37,7 +39,7 @@ export const Home = () => {
     const documentTypes = getDocumentTypes();
     const documents = getAllDocuments(
       currentLimit,
-      currentPage,
+      initialPage,
       documentTypeSelected
     );
 
@@ -57,7 +59,7 @@ export const Home = () => {
 
   const handleChangeLimit = (limit) => {
     setCurrentLimit(limit);
-    refreshDocuments(limit, currentPage, documentTypeSelected);
+    refreshDocuments(limit, initialPage, documentTypeSelected);
   };
 
   const handleChangePage = (page) => {
@@ -66,25 +68,25 @@ export const Home = () => {
 
   const handleFilterByDocumentType = (documentType) => {
     setDocumtnTypeSelected(documentType);
-    refreshDocuments(currentLimit, currentPage, documentType);
+    refreshDocuments(currentLimit, initialPage, documentType);
   };
 
   const onConfirmForm = (form) => {
     createNewDocument(form).then(() => {
-      refreshDocuments(currentLimit, currentPage, documentTypeSelected);
+      refreshDocuments(currentLimit, initialPage, documentTypeSelected);
       setIsOpenModal(false);
     });
   };
 
   const handleDeleteCard = (id) => {
     deleteDocument(id).then(() => {
-      refreshDocuments(currentLimit, currentPage, documentTypeSelected);
+      refreshDocuments(currentLimit, initialPage, documentTypeSelected);
     });
   };
 
   const handleSelectCard = (id) => {
     navigate(`/details/${id}`);
-  }
+  };
 
   return (
     <HomeStyled>

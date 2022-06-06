@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { ROUTES } from '../utils/constants/routes';
+import { ROUTES } from '../utils/constants/routes.constant';
 
 const RenderRoutes = ({ routes }) => {
   return (

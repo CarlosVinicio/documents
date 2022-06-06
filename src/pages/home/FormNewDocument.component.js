@@ -62,6 +62,7 @@ export const FormNewDocument = ({ onCancel, onConfirm, docTypes }) => {
             id="title"
             name="title"
             onChange={onChangeForm}
+            required
           />
         </div>
         <div className="form__input">
