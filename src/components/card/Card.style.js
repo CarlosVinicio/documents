@@ -12,7 +12,8 @@ export const CardStyled = styled.div`
     padding: 10px;
   }
   .card__container:hover {
-    box-shadow: 3px 11px 15px dimgrey;
+    box-shadow: 0px 4px 12px dimgrey;
+    transform: scale(1, 1.2);
   }
   .card__header {
     margin-bottom: 10px;
