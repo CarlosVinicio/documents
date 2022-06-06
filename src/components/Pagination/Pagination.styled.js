@@ -3,7 +3,6 @@ import { palette } from "../../utils/constants/colors.constant";
 
 export const PaginationStyled = styled.div`
   ul {
-    margin-top: 20px;
     display: flex;
   }
   li {
@@ -27,7 +26,6 @@ export const PaginationStyled = styled.div`
     display: flex;
     justify-content:space-between ;
     align-items: center;
-    margin-top: 20px;
     @media (max-width: 660px) {
       flex-direction: column;
     }

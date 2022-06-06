@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { palette } from "../../utils/constants/colors.constant";
 
 export const ButtonStyled = styled.div`
   button {
@@ -7,7 +6,7 @@ export const ButtonStyled = styled.div`
     height: 37px;
     background-color: white;
     cursor: pointer;
-    border: solid 1px ${palette.border} ;
+    border: solid 1px skyblue;
     border-radius: 10px ;
     color: green;
   }
