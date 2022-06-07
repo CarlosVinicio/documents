@@ -1,7 +1,7 @@
 import React from "react";
 import { ModalStyled } from "./Modal.styled";
 
-export const Modal = ({ children, onCancel, onConfirm, show }) => {
+export const Modal = ({ children, show }) => {
   if(!show){
     return null
   }
